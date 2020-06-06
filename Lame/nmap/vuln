@@ -1,0 +1,36 @@
+# Nmap 7.80 scan initiated Fri Jun  5 19:14:44 2020 as: nmap --script vuln -sC -sV -Pn -oN nmap/vuln 10.10.10.3
+Pre-scan script results:
+| broadcast-avahi-dos: 
+|   Discovered hosts:
+|     224.0.0.251
+|   After NULL UDP avahi packet DoS (CVE-2011-1002).
+|_  Hosts are all up (not vulnerable).
+Nmap scan report for 10.10.10.3
+Host is up (0.034s latency).
+Not shown: 996 filtered ports
+PORT    STATE SERVICE     VERSION
+21/tcp  open  ftp         vsftpd 2.3.4
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+|_sslv2-drown: 
+22/tcp  open  ssh         OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+| vulners: 
+|   cpe:/a:openbsd:openssh:4.7p1: 
+|     	CVE-2010-4478	7.5	https://vulners.com/cve/CVE-2010-4478
+|     	CVE-2017-15906	5.0	https://vulners.com/cve/CVE-2017-15906
+|     	CVE-2016-10708	5.0	https://vulners.com/cve/CVE-2016-10708
+|     	CVE-2010-4755	4.0	https://vulners.com/cve/CVE-2010-4755
+|_    	CVE-2008-5161	2.6	https://vulners.com/cve/CVE-2008-5161
+139/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+445/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+Host script results:
+|_smb-vuln-ms10-054: false
+|_smb-vuln-ms10-061: false
+|_smb-vuln-regsvc-dos: ERROR: Script execution failed (use -d to debug)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Jun  5 19:16:48 2020 -- 1 IP address (1 host up) scanned in 123.91 seconds
